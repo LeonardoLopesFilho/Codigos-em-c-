@@ -1,0 +1,85 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+
+float  imp, preco, peso,precof,total;
+int codc , code, var;
+
+imp=0;
+preco=0;
+peso=0;
+precof=0;
+total=0;
+codc=0;
+code=0;
+var=0;
+
+
+
+printf("Digite o peso da carga em toneladas!!!");
+scanf("%f",&peso);
+
+peso = peso * 1000;
+
+var=1;
+  while(var != 0){
+    printf("Digite o codigo da carga");
+    scanf("%d",&codc);
+
+     if(codc<10 || codc>40)
+     {
+      printf("Codigo inválido");
+     }else{
+      var = 0;
+     }
+      if (codc >=21 && codc <=30)
+     {
+      preco = 120; 
+     }
+      if (codc >=31 && codc <=40)
+     {
+      preco =230;
+     }
+      if (codc >=10 && codc <=20)
+     {
+      preco =180;
+     }
+        precof=preco*peso;
+  }
+
+  var=1;
+  while(var != 0 ){
+    printf("\nDigite o codigo do estado");
+    scanf("%d",&code);
+
+    if(code <1 || code >4){
+      printf("\nCodigo de estado invalido");
+    }else{
+      var = 0;
+      switch(code){
+        case 1:
+          imp = precof *0.2; 
+          break;
+        case 2:
+          imp = precof *0.15;
+          break;
+        case 3:
+          imp = precof *0.1;
+          break;
+        case 4:
+          imp = precof * 0.05;
+          break;
+      }
+    } 
+  }
+  total= imp + precof;
+   
+printf("\no peso da carga e kg %0.3f",peso);
+printf("\no preço da carga e %0.2f",precof);
+printf("\no valor do imposto e %0.2f",imp);
+printf("\no valor total da carga e %0.2f",total);
+
+return 0;
+}
+
