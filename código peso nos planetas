@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+
+float  peso,pesofinal,gravidade;
+int menu;
+
+pesofinal =0;
+      while(pesofinal <= 11.55){
+
+        printf("\nDigite o seu peso quilos!\n");
+        scanf("%f",&peso);
+
+        printf("\n1-mercurio");
+        printf("\n2-venus");
+        printf("\n3-marte");
+        printf("\n4-jupiter");
+        printf("\n5-saturno");
+        printf("\n6-urano");
+        printf("\n7-netuno");
+        printf("\nEscolha um planeta para saber seu peso no mesmo\n");
+        scanf("%d",&menu);
+        switch(menu){
+          case 1:
+            gravidade = 0.376;
+            break;
+          case 2:
+            gravidade = 0.903;
+            break;
+          case 3:
+            gravidade = 0.380;
+            break;
+          case 4:
+            gravidade = 2.340;
+            break;
+          case 5:
+            gravidade = 1.160;
+            break;
+          case 6:
+            gravidade = 1.150;
+            break;
+          case 7:
+            gravidade = 1.190;
+            break;        
+        }
+
+        pesofinal = peso * gravidade;
+        printf("\no seu peso seria %0.2f kg\n",pesofinal);
+      }  
+
+
+
+
+return 0;
+}
+
