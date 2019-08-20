@@ -1,0 +1,82 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+
+
+
+	float ida,saque,dinheiro,saldo;
+	int menu,laco,saida,login,senha;
+	char nome;
+
+	login = 1;
+    laco = 1;
+    saldo = 0;
+
+	    while (login < 4){
+		    printf("\nDigite seu nome\n");
+		    scanf("%s",&nome);
+		    printf("\nDigite sua senha numerica\n");
+		    scanf("%d",&senha);
+		        if (senha == 9908){
+		       	 printf("\nLogin feito com sucesso");
+		       	 printf("\nOla senhor do universo\n");
+		       	 while (laco < 4){
+				        printf("\n***Escolha a Opcao!***");
+						printf("\n***1-Deposito***");
+						printf("\n***2-Retirada***");
+						printf("\n***3-Saldo atual***");
+						printf("\n***4-Sair***");
+				
+						printf("\nDigite a Opcao\n");
+						scanf("%d",&menu);
+						if (menu == 1){
+							system("cls");
+							printf("\n--------------------------------");
+						   	printf("\ndigite a Quatidade a ser depositada");
+						   	scanf("%f",&dinheiro);
+						   	printf("\nSucesso!");
+						   	saldo = saldo + dinheiro;
+						}
+						if (menu == 2){
+							system("cls");
+							printf("\n--------------------------------");
+						   	printf("\nDigite o a quantia a ser retirada!");
+						   	scanf("%f",&saque);
+						   	if (saldo <= 0){
+						   	printf("\nO seu saldo esta negativo!! deposite mais grana poxa");
+						   	}else{
+						   	saldo = saldo - saque;
+						   	printf("sucesso!");
+						    }
+						}
+						if (menu == 3){
+							system("cls");
+						    printf("\nO seu saldo e %0.2f\n",saldo);
+						}
+						if (menu == 4){
+							system("cls");
+				            printf("\nDeseja sair?\n");
+				            printf("1-sim\n");
+				            printf("2-nao\n");
+				            scanf("%d",&saida);
+				            if (saida == 1){
+				                return 0;
+				            }else{
+				                laco = laco + 1;
+				            }
+				        }
+				        if (menu < 1 || menu > 4){
+				        	printf("\nNumero de menu não existente");
+				        }
+				    }
+		        }else{
+		        	system("cls");
+		        	printf("login incorreto!");
+		       	 	login = login + 1;
+		       	}
+	    }
+
+    
+return 0;
+}
